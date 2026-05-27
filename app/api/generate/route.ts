@@ -53,20 +53,55 @@ ${journalText}
 
   const guardianText = completion.choices[0].message.content || "";
 
-const imageResult = await client.images.generate({
-  model: "gpt-image-1",
-  prompt: `
-以下の守護霊を、
-幻想的なダークファンタジー風に描いてください。
-
-${guardianText}
-
-背景込み。
-神秘的。
-アニメRPG風。
-`,
-  size: "1024x1024",
-});
+  const imageResult = await client.images.generate({
+    model: "gpt-image-1",
+    prompt: `
+  以下は、人間のジャーナリング記録から生まれた「守護霊」です。
+  
+  これは単なるキャラクターではありません。
+  
+  言葉、感情、記憶、苦悩、創造性が
+  精神世界で融合し、
+  超越存在として顕現したものです。
+  
+  人型に限定しないでください。
+  
+  守護霊は、
+  ドラゴン、獣、機械、仮面、
+  魔導書、煙、結晶、異形、
+  宇宙存在、黒い影、小動物、
+  概念生命体など、
+  自由な姿を取り得ます。
+  
+  「善悪」は人間側の尺度にすぎません。
+  
+  神秘、
+  畏怖、
+  美しさ、
+  超越性、
+  孤独、
+  創造、
+  静寂、
+  狂気、
+  優しさ、
+  そういった感情が混ざった存在として描写してください。
+  
+  アニメ調すぎず、
+  幻想画・ダークファンタジー・神話的アート寄り。
+  
+  スマホ壁紙にしたくなるほど、
+  神秘的で印象的なビジュアル。
+  
+  背景込み。
+  光や粒子や魔力の流れを含め、
+  “顕現した瞬間”を描写してください。
+  
+  以下の守護霊設定を元に描写してください。
+  
+  ${guardianText}
+  `,
+    size: "1024x1536",
+  });
 
 const imageBase64 = imageResult.data?.[0]?.b64_json;
 
