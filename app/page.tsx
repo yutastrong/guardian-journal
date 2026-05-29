@@ -87,13 +87,7 @@ export default function Home() {
             記述を保存
           </button>
 
-          <button
-            onClick={generateGuardian}
-            disabled={loading}
-            className="flex-1 rounded-xl bg-amber-500 text-slate-950 py-3 font-bold hover:bg-amber-400 disabled:opacity-50"
-          >
-            守護霊を顕現
-          </button>
+          
         </div>
 
         {loading && (
@@ -114,13 +108,7 @@ export default function Home() {
               顕現した守護霊
             </h2>
 
-            {image && (
-              <img
-                src={image}
-                alt="守護霊"
-                className="w-full rounded-2xl mb-5"
-              />
-            )}
+            
 
             {guardian}
           </section>
